@@ -108,10 +108,17 @@ function renderNode(node: Node, segName: string): React.ReactNode {
     return <Route key={node.path} path={segName} element={<C />} />;
   }
 
-  // Branch
-  const Layout = node.component ?? PassthroughLayout;
+  // Branch — always use a passthrough layout so child routes render via Outlet.
+  // If this node also has its own component, expose it as an index route.
+  const indexRoute = node.component
+    ? (() => {
+        const C = node.component!;
+        return <Route key={node.path + "__index"} index element={<C />} />;
+      })()
+    : null;
   return (
-    <Route key={node.path} path={segName} element={<Layout />}>
+    <Route key={node.path} path={segName} element={<PassthroughLayout />}>
+      {indexRoute}
       {childRoutes}
     </Route>
   );

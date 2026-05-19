@@ -43,9 +43,9 @@ function Welcome() {
           <Pill icon={<Leaf className="h-3 w-3" />} label="Eco impact" />
         </div>
 
-        <div className="flex-1" />
+        <div className="flex-1 min-h-8" />
 
-        <div className="space-y-3 pb-4">
+        <div className="space-y-3 pt-6 pb-4">
           <Link
             to="/m/customer/signup"
             className="flex items-center justify-center gap-2 w-full rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white text-[15px] font-bold py-4 shadow-[0_10px_30px_-10px_rgba(16,185,129,0.7)]"

@@ -5,15 +5,15 @@ import { MobileFrame } from "@/components/MobileFrame";
 function TechWelcome() {
   return (
     <MobileFrame tone="navy" statusBarDark={false}>
-      {/* Ambient gradient + grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(249,115,22,0.45),transparent_55%)] pointer-events-none" />
+      {/* Ambient gradient + grid (softer orange) */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(249,115,22,0.22),transparent_60%)] pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
       <div className="relative flex-1 flex flex-col px-6 pt-4">
         {/* Brand row */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="h-9 w-9 rounded-2xl bg-orange-500 flex items-center justify-center shadow-[0_0_30px_rgba(249,115,22,0.5)]">
+            <div className="h-9 w-9 rounded-2xl bg-orange-400/90 flex items-center justify-center shadow-[0_0_24px_rgba(249,115,22,0.28)]">
               <Wrench className="h-4 w-4 text-white" />
             </div>
             <div className="flex flex-col leading-tight">
@@ -28,14 +28,14 @@ function TechWelcome() {
 
         {/* Brand wordmark block */}
         <div className="mt-6">
-          <span className="inline-block text-[10px] font-bold uppercase tracking-[0.22em] text-orange-400">Field operations</span>
+          <span className="inline-block text-[10px] font-bold uppercase tracking-[0.22em] text-orange-300/90">Field operations</span>
           <p className="mt-2 text-[12px] text-white/65">Authorised technician access. GPS &amp; activity audited.</p>
         </div>
 
         {/* Headline */}
         <h1 className="mt-6 text-[30px] leading-[1.05] font-serif tracking-tight">
           Field intelligence,<br />
-          <span className="text-orange-400">engineered for solar.</span>
+          <span className="text-orange-300">engineered for solar.</span>
         </h1>
         <p className="mt-2.5 text-[13px] text-white/65 leading-relaxed">
           Smart dispatch · guided diagnostics · offline‑first capture.
@@ -48,13 +48,13 @@ function TechWelcome() {
           <Pill icon={<ClipboardCheck className="h-3.5 w-3.5" />} t="Guided" />
         </div>
 
-        <div className="flex-1" />
+        <div className="flex-1 min-h-8" />
 
         {/* CTAs */}
-        <div className="space-y-2.5 pb-4">
+        <div className="space-y-2.5 pt-6 pb-4">
           <Link
             to="/m/tech/login"
-            className="flex items-center justify-center gap-2 w-full rounded-2xl bg-orange-500 hover:bg-orange-600 text-white text-[15px] font-bold py-4 shadow-[0_10px_30px_-10px_rgba(249,115,22,0.7)]"
+            className="flex items-center justify-center gap-2 w-full rounded-2xl bg-orange-400/90 hover:bg-orange-500 text-white text-[15px] font-bold py-4 shadow-[0_10px_30px_-14px_rgba(249,115,22,0.45)]"
           >
             Sign in with Tech ID <ArrowRight className="h-4 w-4" />
           </Link>
@@ -76,7 +76,7 @@ function TechWelcome() {
 function Pill({ icon, t }: { icon: React.ReactNode; t: string }) {
   return (
     <div className="rounded-xl bg-white/5 border border-white/10 px-2 py-2 flex items-center justify-center gap-1.5 text-white/85">
-      <span className="text-orange-400">{icon}</span>
+      <span className="text-orange-300">{icon}</span>
       <span className="text-[11px] font-semibold">{t}</span>
     </div>
   );
